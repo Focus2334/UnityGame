@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour
 {
     Rigidbody2D rigidbod;
+    BoxCollider2D boxCollider;
     private void Start()
     {
         rigidbod = GetComponent<Rigidbody2D>();
@@ -13,6 +14,6 @@ public class ProjectileScript : MonoBehaviour
 
     private void Update()
     {
-        
+       
     }
 }

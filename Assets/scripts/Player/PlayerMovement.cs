@@ -8,19 +8,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxSpeed;
     [SerializeField] private float acceleration;
     private Rigidbody2D playerRigidbody2D;
+    private Vector2 currentVelocity = Vector2.zero;
 
     private void Start()
     {
         playerRigidbody2D = player.PlayerRigidbody2D;
     }
 
-    public void MovePlayer(Vector3 input)
+    public void MovePlayer(Vector2 input)
     {
-        playerRigidbody2D.AddForce(input.normalized * acceleration);
-        if (playerRigidbody2D.velocity.magnitude > maxSpeed)
-        {
-            playerRigidbody2D.AddForce(-playerRigidbody2D.velocity.normalized * acceleration);
-        }
+        playerRigidbody2D.linearVelocity = input * maxSpeed;
     }
 
     public void RotatePlayer(Vector3 input)

@@ -13,6 +13,6 @@ public class PlayerCamera : MonoBehaviour
     }
     private void Update()
     {
-        rb.MovePosition(new Vector3(player.transform.position.x, player.transform.position.y, -10));
+        rb.MovePosition((transform.position + new Vector3(player.transform.position.x, player.transform.position.y, -10)) / 2);
     }
 }
